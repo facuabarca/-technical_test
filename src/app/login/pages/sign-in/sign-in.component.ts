@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy } from "@angular/core";
-import { FormGroup } from "@angular/forms";
+import { FormGroup, NgForm } from "@angular/forms";
+import { IUserModel } from 'src/app/core/models';
 
 @Component({
   selector: "app-sing-in",
@@ -7,4 +8,14 @@ import { FormGroup } from "@angular/forms";
   styleUrls: ["./sign-in.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SingInComponent {}
+export class SingInComponent {
+  user: IUserModel;
+  constructor() {
+    
+   }
+
+  ingresar(forma: NgForm): void {
+   this.user = forma.value;
+
+  }
+}

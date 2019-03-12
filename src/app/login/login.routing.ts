@@ -12,6 +12,10 @@ const ROUTES_DASHBOARD: Routes = [
       {
         path: "",
         component: pages.SingInComponent
+      },
+      {
+        path: "register",
+        component: pages.RegisterComponent
       }
     ]
   }
