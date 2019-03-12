@@ -12,3 +12,4 @@ import { PAGES } from "./pages/index";
   imports: [CommonModule, ShipsRoutingModule]
 })
 export class ShipsModule {}
+
