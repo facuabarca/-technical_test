@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
+import { IsLoggedGuard } from './core/guards';
 
 export const routes: Routes = [
   {
@@ -13,6 +14,7 @@ export const routes: Routes = [
   },
   {
     path: "dashboard",
+    canLoad: [ IsLoggedGuard ],
     loadChildren: "./modules/dashboard.module#DashboardModule"
   },
   {

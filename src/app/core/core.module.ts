@@ -4,11 +4,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { HTTP_SERVICES } from './http';
 import { SERVICES } from './services';
+import { GUARDS } from './guards';
 
 @NgModule({
     declarations: [],
     imports: [ CommonModule, HttpClientModule ],
     exports: [],
-    providers: [ ...HTTP_SERVICES, ...SERVICES ],
+    providers: [ ...HTTP_SERVICES, ...SERVICES, ...GUARDS, ],
 })
 export class CoreModule {}

@@ -9,7 +9,7 @@ declare function init_plugins();
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['../sign-in/sign-in.component.scss'],
-  providers: [ RegisterService ],
+  providers: [ RegisterService ]
 })
 export class RegisterComponent implements OnInit {
   forma: FormGroup;
