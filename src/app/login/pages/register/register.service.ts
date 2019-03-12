@@ -4,7 +4,6 @@ import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms'
 import { CacheService } from 'src/app/core/services';
 import { IUserModel } from 'src/app/core/models';
 
-
 @Injectable()
 export class RegisterService {
 	constructor(
@@ -39,7 +38,21 @@ export class RegisterService {
     }
     
     registerUser(user: IUserModel ): void {
-        
-        
+        if(this.cacheService.get('users')) {
+            let users: IUserModel[] = this.cacheService.get('users');
+            const userExists: IUserModel = users.find(item => {
+                return item.email === user.email;
+              })
+            if(userExists) {
+                alert('El usuario ya existe.');
+            } else {
+                users.push(user);
+                this.cacheService.set('users', users);
+                alert('Usuario creado');
+            }
+        } else {
+            let users: IUserModel[] = [user];
+            this.cacheService.set('users', users);
+        }
     }
-}
+    }
