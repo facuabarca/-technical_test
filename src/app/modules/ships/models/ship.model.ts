@@ -59,7 +59,9 @@ export class Ship {
 			this.films = res.films || [];
 			this.created = res.created || '';
 			this.edited = res.edited || '';
-			this.url = res.url || '';	
+			this.url = res.url || '';
+			let idImg = res.url.split('/')[res.url.split('/').length -2];
+			this.img =  `https://starwars-visualguide.com/assets/img/starships/${idImg}.jpg`
     	}
 	}
 	

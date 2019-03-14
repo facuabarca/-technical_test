@@ -11,7 +11,11 @@ const ROUTES_SHIPS: Routes = [
     children: [
       {
         path: "",
-        component: pages.ShipComponent
+        component: pages.ShipListComponent
+      },
+      {
+        path: ":id",
+        component: pages.ShipDetailComponent
       }
     ]
   }
