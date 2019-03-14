@@ -15,5 +15,6 @@ export class HeaderComponent {
   logout(): void {
     this.cacheService.clear('userAuth');
     this.router.navigate(['login']);
+  
   }
 }

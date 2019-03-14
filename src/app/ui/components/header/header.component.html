@@ -6,11 +6,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav ml-auto zindex" style="z-index:3">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                  <a class="nav-link" [routerLink]="[ '/dashboard', 'ships' ]"  routerLinkActive="active">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Test page</a>
+                  <a class="nav-link" [routerLink]="[ '/dashboard', 'test' ]" routerLinkActive="active">Test page</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" (click)="logout()">Cerrar sesión</a>

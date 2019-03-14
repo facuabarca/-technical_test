@@ -16,6 +16,10 @@ const ROUTES_DASHBOARD: Routes = [
       {
         path: "ships",
         loadChildren: "./ships/ships.module#ShipsModule"
+      },
+      {
+        path: "test",
+        loadChildren: './module-test/module-test.module#TestModule'
       }
     ]
   }
