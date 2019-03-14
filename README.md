@@ -21,6 +21,12 @@ Install the `npm` packages described in the `package.json` and verify that it wo
 npm install
 ng serve
 ```
+
+### Run the app
+
+```shell
+ng serve
+```
 Builds and serves your app, rebuilding on file changes.
 The `ng serve` command builds and serves your app in `http://localhost:4200/`, rebuilding on file changes.
 
