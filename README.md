@@ -26,6 +26,6 @@ The `ng serve` command builds and serves your app in `http://localhost:4200/`, r
 
 Shut it down manually with `Ctrl-C`.
 
-## Authors
+## Author
 
 * **Facundo Abarca Aparicio**
