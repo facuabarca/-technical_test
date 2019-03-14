@@ -1,16 +1,18 @@
 <div class="page-wrapper container-fluid">
+    
     <div class="search-results"
         infinite-scroll
         [infiniteScrollUpDistance]="scrollUpDistance"
         [infiniteScrollDistance]="scrollDistance"
         [infiniteScrollThrottle]="throttle"
         (scrolled)="onScrollDown()">
-        <div style="height: 300px; text-align: center" *ngFor="let i of result"  class="img-fluid" (click)="detail(i)">
+        <div style="height: 300px; text-align: center" *ngFor="let i of result"  class="img-fluid" (click)="open(i)">
             <h3>{{ i.name  }}</h3>
             <!-- <img [src]="i.img" (onError)="this.i.img='https://t4.ftcdn.net/jpg/01/39/16/63/240_F_139166369_NdTDXc0lM57N66868lC66PpsaMkFSwaf.jpg'"> -->
             <img  class="img-fluid" [src]="i.img" onError="this.src='https://t4.ftcdn.net/jpg/01/39/16/63/240_F_139166369_NdTDXc0lM57N66868lC66PpsaMkFSwaf.jpg';"  alt="..." />
         </div>
     </div>
+
 
 </div>
 

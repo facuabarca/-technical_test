@@ -15,6 +15,7 @@ export class ShipDetailComponent implements OnInit {
 
   ngOnInit() {
     this.detail = this.shipService.getDetail();
+    console.log('detalle modal::', this.detail);
   }
 
   goBack(): void {
