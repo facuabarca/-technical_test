@@ -1,14 +1,18 @@
 .zindex {
-    z-index: 3;
+	z-index: 3;
 }
 
 .logo {
-    position: absolute;
-            width: 100%;
-            left: 0;
-            text-align: center;
-            margin:0 auto;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	text-align: center;
+	margin: 0 auto;
 }
 .nav-item {
-    cursor: pointer;
+	cursor: pointer;
+}
+
+.navbar-toggler {
+	z-index: 3;
 }

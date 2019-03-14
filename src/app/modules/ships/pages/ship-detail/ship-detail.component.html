@@ -1,44 +1,42 @@
 
 <app-modal title="Detalle de la nave" >
-    
-        <div class="card" style="width:100%">
-                <div class="card-body">
-                  <h3 class="card-title"> {{detail.name}}</h3>
-                  <p class="card-text">
-                      <b>Nombre: </b>{{detail.name}}
+      <div class="card full-width">
+            <div class="card-body">
+            <h3 class="card-title"> {{detail.name}}</h3>
+            <p class="card-text">
+                  <b>Nombre: </b>{{detail.name}}
+            </p>
+            <p class="card-text">
+                  <b>Modelo: </b>{{detail.model}}
+            </p>
+            <p class="card-text">
+                  <b>Tipo de nave: </b>{{detail.starship_class}}
+            </p>
+            <p class="card-text">
+                  <b>Tripulación: </b>{{detail.crew}}
+            </p>
+            <p class="card-text">
+                  <b>Pasajeros: </b>{{detail.passengers}}
+            </p>
+            <p class="card-text">
+                  <b>Capacidad de carga: </b>{{detail.cargo_capacity}}
+            </p>
+            <p class="card-text">
+                  <b>Autonomía: </b>{{detail.consumables}}
                   </p>
-                  <p class="card-text">
-                        <b>Modelo: </b>{{detail.model}}
-                  </p>
-                  <p class="card-text">
-                        <b>Tipo de nave: </b>{{detail.starship_class}}
-                  </p>
-                  <p class="card-text">
-                      <b>Tripulación: </b>{{detail.crew}}
-                  </p>
-                  <p class="card-text">
-                        <b>Pasajeros: </b>{{detail.passengers}}
-                  </p>
-                  <p class="card-text">
-                        <b>Capacidad de carga: </b>{{detail.cargo_capacity}}
-                  </p>
-                  <p class="card-text">
-                    <b>Autonomía: </b>{{detail.consumables}}
-                    </p>
-                  <p class="card-text">
-                        <b>Creador: </b>{{detail.manufacturer}}
-                  </p>
-                  <p class="card-text">
-                        <b>Máxima velocidad: </b>{{detail.max_atmosphering_speed}}
-                  </p>
-                  <p class="card-text">
-                        <b>Máxima velocidad: </b>{{detail.max_atmosphering_speed}}
-                  </p>
-                  <p class="card-text">
-                        <b>Cantidad de películas en las que aparece: </b>{{detail.films.length}}
-                  </p>
-                </div>
-                <img  class="img-fluid" [src]="detail.img" onError="this.src='https://cdn.dribbble.com/users/226011/screenshots/2424315/08_404.png';"  alt="..." />
-        </div>
-   
+            <p class="card-text">
+                  <b>Creador: </b>{{detail.manufacturer}}
+            </p>
+            <p class="card-text">
+                  <b>Máxima velocidad: </b>{{detail.max_atmosphering_speed}}
+            </p>
+            <p class="card-text">
+                  <b>Máxima velocidad: </b>{{detail.max_atmosphering_speed}}
+            </p>
+            <p class="card-text">
+                  <b>Cantidad de películas en las que aparece: </b>{{detail.films.length}}
+            </p>
+            </div>
+            <img  class="img-fluid" [src]="detail.img" onError="this.src='https://cdn.dribbble.com/users/226011/screenshots/2424315/08_404.png';"  alt="..." />
+      </div>
 </app-modal>

@@ -15,7 +15,6 @@ export class LoaderInterceptor implements HttpInterceptor {
 		const i = this.requests.indexOf(req);
 		this.requests.splice(i, 1);
 		this.loaderService.isLoading.next(this.requests.length > 0);
-		
 	}
 
 	intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {

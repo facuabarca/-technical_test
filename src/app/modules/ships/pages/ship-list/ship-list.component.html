@@ -1,33 +1,27 @@
-
-
 <div class="page-wrapper container">
         <div class="search-results"
-        infinite-scroll
-        [infiniteScrollUpDistance]="scrollUpDistance"
-        [infiniteScrollDistance]="scrollDistance"
-        [infiniteScrollThrottle]="throttle"
-        (scrolled)="onScrollDown()">
-        <div class="row">
-             
-            <div class="col-12" *ngFor="let i of result" style="margin:10px;">
-                <div class="row">
-                <div class="col-12 col-md-7">
-                    <img  class="img-fluid" [src]="i.img" onError="this.src='https://cdn.dribbble.com/users/226011/screenshots/2424315/08_404.png';"  alt="..." />
-                </div>
-                <div class="col-12 col-md-5">
-                    <h3 class="card-title">{{ i.name }}</h3>
-                    <p><b>Modelo:</b> {{i.model}}</p>
-                    <p> <b>Tipo de nave:</b> {{ i.starship_class}}</p>
-                    <button (click)="openModal(i)" class="btn btn-primary">Ver detalles</button>
-                </div>
+            infinite-scroll
+            [infiniteScrollUpDistance]="scrollUpDistance"
+            [infiniteScrollDistance]="scrollDistance"
+            [infiniteScrollThrottle]="throttle"
+            (scrolled)="onScrollDown()">
+            <div class="row">
+                <div class="col-12 margin-ship" *ngFor="let i of result">
+                    <div class="row">
+                    <div class="col-12 col-md-7">
+                        <img  class="img-fluid" [src]="i.img" onError="this.src='https://cdn.dribbble.com/users/226011/screenshots/2424315/08_404.png';"  alt="..." />
+                    </div>
+                    <div class="col-12 col-md-5">
+                        <h3 class="card-title">{{ i.name }}</h3>
+                        <p><b>Modelo:</b> {{i.model}}</p>
+                        <p> <b>Tipo de nave:</b> {{ i.starship_class}}</p>
+                        <button (click)="openModal(i)" class="btn btn-primary">Ver detalles</button>
+                    </div>
+                    </div>
                 </div>
             </div>
-    </div>
-    </div>
-
-
+        </div>
 </div>
-
 <app-loader-spinner *ngIf="loader$ | async"></app-loader-spinner>
 
 

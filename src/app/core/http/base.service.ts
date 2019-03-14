@@ -3,8 +3,6 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable, throwError, empty } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-
-
 export abstract class BaseService {
 	private http: HttpClient;
 
@@ -13,8 +11,7 @@ export abstract class BaseService {
 	}
 
 	getResponse<T>(url: string): Observable<HttpResponse<T>> {
-		const http: Observable<HttpResponse<T>> = this.http
-			.get<T>(this.getUrl(url), { observe: 'response' })
+		const http: Observable<HttpResponse<T>> = this.http.get<T>(this.getUrl(url), { observe: 'response' });
 		return this.handleTimeout<HttpResponse<T>>(http);
 	}
 
@@ -22,7 +19,7 @@ export abstract class BaseService {
 		return observable.pipe(
 			catchError((error: any) => {
 				if (error.name && error.name === 'TimeoutError') {
-					alert('Tiempo de espera agotado.')
+					alert('Tiempo de espera agotado.');
 					return empty();
 				} else {
 					return throwError(error);

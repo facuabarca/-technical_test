@@ -8,9 +8,9 @@ import { GUARDS } from './guards';
 import { INTERCEPTORS } from './interceptors';
 
 @NgModule({
-    declarations: [],
-    imports: [ CommonModule, HttpClientModule ],
-    exports: [],
-    providers: [ ...HTTP_SERVICES, ...SERVICES, ...GUARDS, ...INTERCEPTORS ],
+	declarations: [],
+	imports: [ CommonModule, HttpClientModule ],
+	exports: [],
+	providers: [ ...HTTP_SERVICES, ...SERVICES, ...GUARDS, ...INTERCEPTORS ]
 })
 export class CoreModule {}

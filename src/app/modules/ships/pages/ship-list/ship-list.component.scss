@@ -1,8 +1,11 @@
 .main-panel {
-    height: 100px;
-    overflow-y: scroll;
-  }
+	height: 100px;
+	overflow-y: scroll;
+}
+.search-results {
+	height: 100%;
+}
 
-  .search-results {
-    height: 100%;
-  }
+.margin-ship {
+	margin: 10px;
+}

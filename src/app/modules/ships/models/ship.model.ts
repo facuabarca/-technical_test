@@ -1,47 +1,47 @@
 export interface IShip {
-    name: string;
-    model: string;
-    manufacturer: string;
-    cost_in_credits: string;
-    length: string;
-    max_atmosphering_speed: string;
-    crew: string;
-    passengers: string;
-    cargo_capacity: string;
-    consumables: string;
-    hyperdrive_rating: string;
-    MGLT: string;
-    starship_class: string;
-    pilots: any[];
-    films: any[];
-    created: string;
-    edited: string;
-    url: string;
+	name: string;
+	model: string;
+	manufacturer: string;
+	cost_in_credits: string;
+	length: string;
+	max_atmosphering_speed: string;
+	crew: string;
+	passengers: string;
+	cargo_capacity: string;
+	consumables: string;
+	hyperdrive_rating: string;
+	MGLT: string;
+	starship_class: string;
+	pilots: any[];
+	films: any[];
+	created: string;
+	edited: string;
+	url: string;
 }
 
 export class Ship {
-    name: string;
-    model: string;
-    manufacturer: string;
-    cost_in_credits: string;
-    length: string;
-    max_atmosphering_speed: string;
-    crew: string;
-    passengers: string;
-    cargo_capacity: string;
-    consumables: string;
-    hyperdrive_rating: string;
-    MGLT: string;
-    starship_class: string;
-    pilots: any[];
-    films: any[];
-    created: string;
-    edited: string;
-    url: string;
-    img: string;
+	name: string;
+	model: string;
+	manufacturer: string;
+	cost_in_credits: string;
+	length: string;
+	max_atmosphering_speed: string;
+	crew: string;
+	passengers: string;
+	cargo_capacity: string;
+	consumables: string;
+	hyperdrive_rating: string;
+	MGLT: string;
+	starship_class: string;
+	pilots: any[];
+	films: any[];
+	created: string;
+	edited: string;
+	url: string;
+	img: string;
 
-    constructor(res: IShip) {
-     	if(res) {
+	constructor(res: IShip) {
+		if (res) {
 			this.name = res.name || '';
 			this.model = res.model || '';
 			this.manufacturer = res.manufacturer || '';
@@ -60,10 +60,8 @@ export class Ship {
 			this.created = res.created || '';
 			this.edited = res.edited || '';
 			this.url = res.url || '';
-			let idImg = res.url.split('/')[res.url.split('/').length -2];
-			this.img =  `https://starwars-visualguide.com/assets/img/starships/${idImg}.jpg`
-    	}
+			let idImg = res.url.split('/')[res.url.split('/').length - 2];
+			this.img = `https://starwars-visualguide.com/assets/img/starships/${idImg}.jpg`;
+		}
 	}
-	
-
-} 
+}

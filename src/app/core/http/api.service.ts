@@ -1,6 +1,6 @@
 import { Injectable, Injector } from '@angular/core';
 
-import * as env from '../../../environments/global/global'
+import * as env from '../../../environments/global/global';
 import { BaseService } from './base.service';
 
 @Injectable()

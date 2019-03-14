@@ -6,4 +6,3 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 	styleUrls: [ './spinner.component.scss' ]
 })
 export class LoaderSpinnerComponent {}
-
