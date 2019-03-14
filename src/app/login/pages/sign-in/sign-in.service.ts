@@ -7,6 +7,9 @@ import { IUserModel, UserAuth } from 'src/app/core/models';
 @Injectable()
 export class SignInService {
     private userAuth: UserAuth;
+    typeAlert: string = 'alert-success';
+    messageAlert: string = '';
+    showAlert: boolean = false;
 	constructor( private cacheService: CacheService, private router: Router) {}
     
     login(user: IUserModel): void {
@@ -18,12 +21,19 @@ export class SignInService {
             if(userExists) {
                 this.userAuth = new UserAuth(user.email, true);
                 this.cacheService.set('userAuth', this.userAuth);
-                this.router.navigate(['']);
+                setTimeout(()=> {
+                    this.router.navigate(['dashboard']);
+                }, 1000)
+                
             } else { 
-               alert('Usuario o contraseña incorrecto')
+               this.messageAlert = 'Usuario o contraseña incorrectos';
+               this.typeAlert = 'alert-danger';
+               this.showAlert = true;
             }
         } else {
-            alert('Usuario o contraseña incorrecto')
+            this.messageAlert = 'Usuario o contraseña incorrectos';
+            this.typeAlert = 'alert-danger';
+            this.showAlert = true;
         }
     }
 }

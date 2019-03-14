@@ -3,12 +3,17 @@ import { Injectable,  } from '@angular/core';
 import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
 import { CacheService } from 'src/app/core/services';
 import { IUserModel } from 'src/app/core/models';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class RegisterService {
+  typeAlert: string = 'alert-success';
+  messageAlert: string = '';
+  showAlert: boolean = false;
 	constructor(
         private fb: FormBuilder,
-        private cacheService: CacheService
+        private cacheService: CacheService,
+        private router: Router
     ) {}
     
     sonIguales(campo1: string, campo2: string) {
@@ -31,7 +36,6 @@ export class RegisterService {
             password: new FormControl(null, Validators.required),
             password2: new FormControl(null, Validators.required),
           }, { validators: this.sonIguales('password', 'password2') });
-		
 		return formGroup;
     }
     
@@ -42,15 +46,29 @@ export class RegisterService {
                 return item.email === user.email;
               })
             if(userExists) {
-                alert('El usuario ya existe.');
+                this.messageAlert = 'El usuario ya existe.';
+                this.typeAlert = 'alert-danger';
+                this.showAlert = true;
             } else {
                 users.push(user);
                 this.cacheService.set('users', users);
-                alert('Usuario creado');
+                this.messageAlert = 'Usuario creado correctamente';
+                this.typeAlert = 'alert-success';
+                this.showAlert = true;
+                this.redirectLogin();
             }
         } else {
             let users: IUserModel[] = [user];
             this.cacheService.set('users', users);
+            this.messageAlert = 'Usuario creado correctamente';
+            this.typeAlert = 'alert-success';
+            this.showAlert = true;
+            this.redirectLogin();
         }
+    }
+    redirectLogin(): void {
+      setTimeout(() => {
+        this.router.navigate(['login']);
+      },2500);
     }
     }
