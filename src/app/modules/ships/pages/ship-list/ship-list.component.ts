@@ -4,6 +4,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ShipService } from '../../services';
 import { ShipDetailComponent } from '../ship-detail/ship-detail.component';
 import { IShip } from '../../models/ship.model';
+import { Observable } from 'rxjs';
+import { LoaderService } from 'src/app/core/services';
 
 @Component({
   selector: "app-ship-list",
@@ -17,12 +19,14 @@ export class ShipListComponent implements OnInit {
   scrollUpDistance = 2;
   direction = 'down';
   throttle = 900;
+  loader$: Observable<boolean>;
 
   result: IShip[] = [];
-  constructor(private shipService: ShipService, private router: Router, private modalService: NgbModal) {}
+  constructor(private shipService: ShipService, private router: Router, private modalService: NgbModal, private loaderService: LoaderService) {}
   
 
   ngOnInit() {
+    this.loader$ = this.loaderService.isLoading;
     this.shipService.getShips(this.page).subscribe((res:any) => {
       this.result = res.results;
       this.page = res.next;
