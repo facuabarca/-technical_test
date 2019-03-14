@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class ShipService {
-    detail: any;
+    detail: IShip;
     constructor( private apiService: ApiService ) { }
     
     getShips(page: string): Observable<any> {
@@ -23,9 +23,10 @@ export class ShipService {
 		);
      }
 
-     setDetail(e) {
+     setDetail(e: IShip) {
          this.detail = e;
      }
+     
      getDetail(){
          return this.detail;
      }
