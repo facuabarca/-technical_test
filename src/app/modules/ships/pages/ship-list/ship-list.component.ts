@@ -40,6 +40,7 @@ export class ShipListComponent implements OnInit {
   }
 
   detail(i): void {
-    this.router.navigate([ '/dashboard', 'ships', 15 ]);
+    this.shipService.setDetail(i);
+    // this.router.navigate([ '/dashboard', 'ships', 15 ]);
   }
 }

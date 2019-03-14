@@ -9,15 +9,15 @@ import { Router } from '@angular/router';
   styleUrls: ["./ship-detail.component.scss"]
 })
 export class ShipDetailComponent implements OnInit {
-
+    detail: any;
   constructor(private shipService: ShipService, private router: Router) {}
   
 
   ngOnInit() {
-    
+    this.detail = this.shipService.getDetail();
   }
 
   goBack(): void {
-    this.router.navigate([ '/dashboard/ships', { skipLocationChange: true } ]);
+    this.router.navigate(['']);
   }
 }

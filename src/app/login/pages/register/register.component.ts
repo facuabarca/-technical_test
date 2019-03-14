@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
   constructor(private registerService: RegisterService, private router: Router) { }
 
   ngOnInit() {
-    init_plugins();
+    // init_plugins();
     this.forma = this.registerService.buildForm();
   }
 
