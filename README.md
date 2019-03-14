@@ -1,27 +1,31 @@
-# TechnicalTest
+# Massimo Dutti
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.4.
 
-## Development server
+This is a technical test project to demonstrate the use of Angular 7. It contains a very scalable project structure and modules for future additions.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Get started
 
-## Code scaffolding
+### Clone the repo
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```shell
+git clone https://github.com/facuabarca/technical_test.git
+cd technical_test
+```
 
-## Build
+### Install npm packages
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Install the `npm` packages described in the `package.json` and verify that it works:
 
-## Running unit tests
+```shell
+npm install
+ng serve
+```
+Builds and serves your app, rebuilding on file changes.
+The `ng serve` command builds and serves your app in `http://localhost:4200/`, rebuilding on file changes.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Shut it down manually with `Ctrl-C`.
 
-## Running end-to-end tests
+## Authors
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* **Facundo Abarca Aparicio**
